@@ -35,6 +35,8 @@ async function registerUser(req, res) {
         password: hash
     })
 
+    await newUser.save();
+
     const token = jwt.sign(
         {id: newUser._id, username: newUser.username},
         process.env.JWT_SECRET,
