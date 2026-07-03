@@ -23,7 +23,7 @@ authRouter.post("/login", authController.loginUser);
  * @desc  Log the user out by blacklisting their JWT and clearing the auth cookie.
  * @access Public
  */
-authRouter.post("/logout", authController.logoutUser);
+authRouter.post("/logout", authUser, authController.logoutUser);
 
 /**
  * @route GET /get-me
