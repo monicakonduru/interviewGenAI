@@ -46,7 +46,11 @@ async function registerUser(req, res) {
 
     res.cookie("token", token)
 
-    res.status(201).json({ message: "User registered successfully", token });
+    res.status(201).json({
+        message: "User registered successfully",
+        token,
+        user: { id: newUser._id, username: newUser.username }
+    });
 }
 
 /**
